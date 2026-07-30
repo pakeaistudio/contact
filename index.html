@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Futuristic Quantum Link Portal</title>
     <style>
+        /* Ambil Font Plus Jakarta Sans dari Google Fonts */
+        @import url('https://googleapis.com');
+
         /* Reset & Base Setup */
         * {
             margin: 0;
@@ -57,7 +60,7 @@
             border: 2px solid #6278ad;
             border-radius: 24px 0px 24px 0px; /* Sudut asimetris futuristik */
             padding: 40px 30px;
-            box-shadow: 0 0 30px rgba(0, 255, 204, 0.15), inset 0 0 15px rgba(0, 255, 204, 0.05);
+            box-shadow: 0 0 30px rgba(98, 120, 173, 0.15), inset 0 0 15px rgba(98, 120, 173, 0.05);
         }
 
         /* Efek Ornamen Sudut ala Sci-Fi HUD */
@@ -67,7 +70,7 @@
             top: -12px;
             right: 25px;
             background: #6278ad;
-            color: #ffff;
+            color: #ffffff;
             font-size: 9px;
             font-weight: 900;
             letter-spacing: 2px;
@@ -81,14 +84,15 @@
             margin-bottom: 35px;
         }
 
+        /* Thumbnail Utama: Tanpa Border */
         .avatar-glow {
             width: 96px;
             height: 96px;
             border-radius: 50%;
             margin: 0 auto 15px;
-            padding: 4px;
-            background: linear-gradient(45deg, #00ffcc, #ff007f);
-            box-shadow: 0 0 20px rgba(0, 255, 204, 0.4);
+            padding: 0;
+            background: none;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); 
         }
 
         .avatar-glow img {
@@ -114,7 +118,7 @@
             align-items: center;
             gap: 6px;
             font-size: 12px;
-            color: #ff007f;
+            color: #ffffff;
             text-transform: uppercase;
             letter-spacing: 1.5px;
             font-weight: 700;
@@ -135,13 +139,13 @@
             100% { opacity: 0.4; }
         }
 
-        /* Tombol Link Futuristik + Slot Thumbnail */
+        /* Tombol Link */
         .cyber-link {
             display: flex;
             align-items: center;
             gap: 15px;
             background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(0, 255, 204, 0.2);
+            border: 1px solid #6278ad;
             padding: 14px 18px;
             margin: 16px 0;
             text-decoration: none;
@@ -151,12 +155,12 @@
             border-radius: 12px 0 12px 0;
         }
 
-        /* Slot Thumbnail Bulat Kiri */
+        /* Slot Thumbnail Kecil */
         .thumb-slot {
             width: 42px;
             height: 42px;
             border-radius: 50%;
-            border: 2px solid rgba(0, 255, 204, 0.4);
+            border: 2px solid rgba(98, 120, 173, 0.4);
             overflow: hidden;
             flex-shrink: 0;
             background: rgba(0, 0, 0, 0.4);
@@ -181,17 +185,9 @@
             transition: color 0.3s;
         }
 
-        /* Panah HUD Kanan */
-        .arrow-hud {
-            color: #00ffcc;
-            font-size: 14px;
-            font-weight: bold;
-            transition: transform 0.3s;
-        }
-
-        /* Efek Hover Gak Pasaran (Neon Glow & Shift) */
+        /* Efek Hover */
         .cyber-link:hover {
-            background: rgba(0, 255, 204, 0.08);
+            background: rgba(98, 120, 173, 0.08);
             border-color: #00ffcc;
             box-shadow: 0 0 15px rgba(0, 255, 204, 0.3);
             transform: translateY(-2px);
@@ -204,10 +200,6 @@
         .cyber-link:hover .thumb-slot {
             border-color: #ff007f;
             box-shadow: 0 0 8px rgba(255, 0, 127, 0.5);
-        }
-
-        .cyber-link:hover .arrow-hud {
-            transform: translateX(4px);
         }
 
         /* Garis Dekorasi Samping Tombol */
@@ -234,7 +226,7 @@
         <div class="profile-area">
             <!-- Foto Profil Utama -->
             <div class="avatar-glow">
-                <img src="https://i.imgur.com/TSG2KkY.png" alt="Avatar">
+                <img src="https://imgur.com" alt="Avatar">
             </div>
             <!-- Nama & Subtitle Anda -->
             <h1>@PAKEAISTUDIO</h1>
@@ -246,30 +238,26 @@
 
         <!-- TOMBOL INSTAGRAM -->
         <a class="cyber-link" href="https://instagram.com" target="_blank">
-            <!-- Ganti URL src di bawah dengan link icon/gambar thumbnail Anda -->
             <div class="thumb-slot">
-                <img src="https://i.imgur.com/csCoaD2.png" alt="IG">
+                <img src="https://imgur.com" alt="IG">
             </div>
             <span class="link-text">Instagram Account</span>
-            <span class="arrow-hud">&gt;</span>
         </a>
 
         <!-- TOMBOL TIKTOK -->
         <a class="cyber-link" href="https://tiktok.com" target="_blank">
             <div class="thumb-slot">
-                <img src="https://i.imgur.com/xcg8Gv9.png" alt="TT">
+                <img src="https://imgur.com" alt="TT">
             </div>
             <span class="link-text">TikTok Account</span>
-            <span class="arrow-hud">&gt;</span>
         </a>
 
         <!-- TOMBOL WHATSAPP -->
         <a class="cyber-link" href="https://wa.me" target="_blank">
             <div class="thumb-slot">
-                <img src="https://i.imgur.com/w52d61U.png" alt="WA">
+                <img src="https://imgur.com" alt="WA">
             </div>
-            <span class="link-text">Direct Whatsapp</span>
-            <span class="arrow-hud">&gt;</span>
+            <span class="link-text">WhatsApp Chat</span>
         </a>
     </div>
 

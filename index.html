@@ -3,64 +3,274 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal Link Saya</title>
+    <title>Futuristic Quantum Link Portal</title>
     <style>
-        /* Gaya Desain Halaman */
+        /* Reset & Base Setup */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #1e1e24, #2a2b3d);
-            color: #ffffff;
+            background: radial-gradient(circle at center, #0a0b10 0%, #030406 100%);
+            color: #00ffcc;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
             min-height: 100vh;
-            margin: 0;
-            padding: 20px;
+            padding: 24px;
+            overflow-x: hidden;
+            position: relative;
         }
-        .container {
-            text-align: center;
-            max-width: 400px;
+
+        /* Latar Belakang Garis Siber Bergerak (Gak Pasaran) */
+        body::before {
+            content: "";
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background-image: 
+                linear-gradient(rgba(0, 255, 204, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 204, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            background-position: center;
+            animation: gridMove 20s linear infinite;
+            z-index: 1;
+        }
+
+        @keyframes gridMove {
+            0% { transform: translate(-25%, -25%) rotate(0deg); }
+            100% { transform: translate(-25%, -25%) rotate(5deg); }
+        }
+
+        /* Container Utama dengan Sudut Asimetris */
+        .portal-wrapper {
+            position: relative;
+            z-index: 2;
             width: 100%;
+            max-width: 440px;
+            background: rgba(10, 14, 23, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 2px solid #00ffcc;
+            border-radius: 24px 0px 24px 0px; /* Sudut asimetris futuristik */
+            padding: 40px 30px;
+            box-shadow: 0 0 30px rgba(0, 255, 204, 0.15), inset 0 0 15px rgba(0, 255, 204, 0.05);
         }
+
+        /* Efek Ornamen Sudut ala Sci-Fi HUD */
+        .portal-wrapper::after {
+            content: "SYSTEM ACTIVE";
+            position: absolute;
+            top: -12px;
+            right: 25px;
+            background: #00ffcc;
+            color: #0a0b10;
+            font-size: 9px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            padding: 2px 8px;
+            border-radius: 3px;
+        }
+
+        /* Profile Header */
+        .profile-area {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .avatar-glow {
+            width: 96px;
+            height: 96px;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            padding: 4px;
+            background: linear-gradient(45deg, #00ffcc, #ff007f);
+            box-shadow: 0 0 20px rgba(0, 255, 204, 0.4);
+        }
+
+        .avatar-glow img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            background: #111;
+        }
+
         h1 {
-            font-size: 24px;
-            margin-bottom: 5px;
+            font-size: 26px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #ffffff;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+            margin-bottom: 6px;
         }
-        p {
-            font-size: 14px;
-            color: #b3b3b3;
-            margin-bottom: 30px;
+
+        .status-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            color: #ff007f;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 700;
         }
-        /* Gaya Desain Tombol */
-        .link-btn {
-            display: block;
-            background-color: #ffffff;
-            color: #1e1e24;
+
+        .status-dot {
+            width: 6px;
+            height: 6px;
+            background-color: #ff007f;
+            border-radius: 50%;
+            box-shadow: 0 0 8px #ff007f;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.4; }
+            50% { opacity: 1; }
+            100% { opacity: 0.4; }
+        }
+
+        /* Tombol Link Futuristik + Slot Thumbnail */
+        .cyber-link {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(0, 255, 204, 0.2);
+            padding: 14px 18px;
+            margin: 16px 0;
             text-decoration: none;
-            padding: 15px;
-            margin: 12px 0;
-            border-radius: 8px;
-            font-weight: bold;
-            transition: transform 0.2s, background-color 0.2s;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border-radius: 12px 0 12px 0;
         }
-        .link-btn:hover {
-            transform: scale(1.03);
-            background-color: #e6e6e6;
+
+        /* Slot Thumbnail Bulat Kiri */
+        .thumb-slot {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            border: 2px solid rgba(0, 255, 204, 0.4);
+            overflow: hidden;
+            flex-shrink: 0;
+            background: rgba(0, 0, 0, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .thumb-slot img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Teks Link */
+        .link-text {
+            flex-grow: 1;
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+            transition: color 0.3s;
+        }
+
+        /* Panah HUD Kanan */
+        .arrow-hud {
+            color: #00ffcc;
+            font-size: 14px;
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+
+        /* Efek Hover Gak Pasaran (Neon Glow & Shift) */
+        .cyber-link:hover {
+            background: rgba(0, 255, 204, 0.08);
+            border-color: #00ffcc;
+            box-shadow: 0 0 15px rgba(0, 255, 204, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .cyber-link:hover .link-text {
+            color: #00ffcc;
+        }
+
+        .cyber-link:hover .thumb-slot {
+            border-color: #ff007f;
+            box-shadow: 0 0 8px rgba(255, 0, 127, 0.5);
+        }
+
+        .cyber-link:hover .arrow-hud {
+            transform: translateX(4px);
+        }
+
+        /* Garis Dekorasi Samping Tombol */
+        .cyber-link::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 3px;
+            background: #ff007f;
+            transform: scaleY(0);
+            transition: transform 0.2s ease;
+        }
+
+        .cyber-link:hover::before {
+            transform: scaleY(1);
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <!-- Gantilah teks di bawah ini dengan nama & bio Anda -->
-        <h1>@NamaAnda</h1>
-        <p>Selamat datang di portal link resmi saya.</p>
+    <div class="portal-wrapper">
+        <div class="profile-area">
+            <!-- Foto Profil Utama -->
+            <div class="avatar-glow">
+                <img src="https://picsum.photos" alt="Avatar">
+            </div>
+            <!-- Nama & Subtitle Anda -->
+            <h1>@PAKEAISTUDIO</h1>
+            <div class="status-tag">
+                <span class="status-dot"></span>
+                <span>Secure Connection Active</span>
+            </div>
+        </div>
 
-        <!-- Gantilah URL di bawah ini dengan link media sosial Anda -->
-        <a class="link-btn" href="https://instagram.com" target="_blank">Instagram</a>
-        <a class="link-btn" href="https://tiktok.com" target="_blank">TikTok</a>
-        <a class="link-btn" href="https://wa.me" target="_blank">WhatsApp Chat</a>
+        <!-- TOMBOL INSTAGRAM -->
+        <a class="cyber-link" href="https://instagram.com" target="_blank">
+            <!-- Ganti URL src di bawah dengan link icon/gambar thumbnail Anda -->
+            <div class="thumb-slot">
+                <img src="https://flaticon.com" alt="IG">
+            </div>
+            <span class="link-text">Instagram Network</span>
+            <span class="arrow-hud">&gt;</span>
+        </a>
+
+        <!-- TOMBOL TIKTOK -->
+        <a class="cyber-link" href="https://tiktok.com" target="_blank">
+            <div class="thumb-slot">
+                <img src="https://flaticon.com" alt="TT">
+            </div>
+            <span class="link-text">TikTok Datastream</span>
+            <span class="arrow-hud">&gt;</span>
+        </a>
+
+        <!-- TOMBOL WHATSAPP -->
+        <a class="cyber-link" href="https://wa.me" target="_blank">
+            <div class="thumb-slot">
+                <img src="https://flaticon.com" alt="WA">
+            </div>
+            <span class="link-text">Direct Quantum Chat</span>
+            <span class="arrow-hud">&gt;</span>
+        </a>
     </div>
 
 </body>
